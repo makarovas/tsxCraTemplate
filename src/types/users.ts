@@ -1,15 +1,12 @@
 import {UserActionTypes} from '../store/reducers/constants'
-
-export type UserAction = FetchUsersAction | FetchUsersActionSuccess | FetchUsersActionError;
-
 export interface UserState {
-  users: any[];
+  users?: any[];
   loading: boolean;
   error: null | string;
 }
 
 export interface FetchUsersAction {
-  payload: any[] 
+  payload?: any[] 
   type: UserActionTypes.FETCH_USERS
 }
 
@@ -22,3 +19,8 @@ export interface FetchUsersActionError {
   payload: string
   type: UserActionTypes.FETCH_USERS_ERROR
 }
+
+export type UserAction = 
+  FetchUsersAction 
+  | FetchUsersActionSuccess 
+  | FetchUsersActionError;
